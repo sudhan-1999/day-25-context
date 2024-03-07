@@ -1,0 +1,6 @@
+.card{
+  margin: 30px;
+}
+.card:hover{
+  box-shadow: 0 6px 6px 0 rgb(138, 136, 136);
+}
