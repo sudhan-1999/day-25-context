@@ -1,6 +1,9 @@
 import React from "react";
+import Details from "./Detailed" 
+//import { useNavigate } from "react-router-dom";
 
 function Productslist() {
+ //const navigate = useNavigate();
   const data = [
     {
       id: 1,
@@ -92,37 +95,45 @@ function Productslist() {
       ],
     },
   ];
-
+ 
   return (
     <div className="container">
-    <div className="row">
-        
-      {data.map((e, id) => {
-        return (
-            <div className="col-lg-4"  key={id}>
-            <div  className="card" style={{ width: "18rem",height:"22rem" }}>
-              <img style={{ width: "10rem",height:"15rem" }}
-                className="card-img-top"
-                src={e.images}
-                alt="Card image cap"
-              />
-              <div className="card-body">
-                <h5 className="card-title">{e.title}</h5>
-                <h6>{e.brand}-{e.category}</h6>
-                <p className="card-text">{e.description}</p>
-                <span>price:${e.price}</span><span>⭐{e.rating}</span>
-                <p>DiscountPercentage:{e.discountPercentage}%</p>
-                <p>Stocks:{e.stock}</p>
-                <a href="#" className="btn btn-primary">
-                  Buy Now
-                </a>
+      <div className="row">
+        {data.map((e, id) => {
+          return (
+            <div className="col-lg-4" key={id}>
+              <div className="card" style={{ width: "18rem", height: "22rem" }}>
+                <img
+                  style={{ width: "10rem", height: "15rem" }}
+                  className="card-img-top"
+                  src={e.images[0]}
+                  alt="Product image"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">
+                    {e.title}-{e.id}
+                  </h5>
+                  <h6>
+                    {e.brand}-{e.category}
+                  </h6>
+                  <p className="card-text">{e.description}</p>
+                  <span>price:${e.price}</span>
+                  <span>⭐{e.rating}</span>
+                  <p>DiscountPercentage:{e.discountPercentage}%</p>
+                  <p>Stocks:{e.stock}</p>
+                  <button
+                   /* onClick={() => navigate(`/products/${e.id}`)}*/
+                    className="btn btn-primary"
+                  >
+                    Buy Now
+                  </button>
+                  <Details e={e} id={id}/>
+                </div>
               </div>
             </div>
-            </div>
-        );
-      })}
-    </div>
-    
+          );
+        })}
+      </div>
     </div>
   );
 }
