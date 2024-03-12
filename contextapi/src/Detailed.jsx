@@ -1,9 +1,7 @@
 import React from "react";
 import { useState } from "react";
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-//import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
-function Details({ e}) {
+function Details({e}) {
   const [count,setCount]=useState("1");
   function plus(){
     setCount(count + 1);
@@ -11,7 +9,7 @@ function Details({ e}) {
   function minus(){
     setCount(count - 1);
   }
- 
+ //const {id} =useParams()
   return (
     <div>
       <div className="row">

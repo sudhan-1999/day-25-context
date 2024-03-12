@@ -1,9 +1,9 @@
 import React from "react";
 import Details from "./Detailed" 
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Productslist() {
- //const navigate = useNavigate();
+ const navigate = useNavigate();
   const data = [
     {
       id: 1,
@@ -122,7 +122,7 @@ function Productslist() {
                   <p>DiscountPercentage:{e.discountPercentage}%</p>
                   <p>Stocks:{e.stock}</p>
                   <button
-                   /* onClick={() => navigate(`/products/${e.id}`)}*/
+                    onClick={() => navigate(`/Productslist/${e.id}`)}
                     className="btn btn-primary"
                   >
                     Buy Now
