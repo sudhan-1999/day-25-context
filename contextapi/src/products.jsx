@@ -1,5 +1,4 @@
 import React from "react";
-//import Details from "./Detailed" 
 import { useNavigate } from "react-router-dom";
 
 function Productslist({data}) {
@@ -21,7 +20,7 @@ function Productslist({data}) {
                 />
                 <div className="card-body">
                   <h5 className="card-title">
-                    {e.title}-{e.id}
+                    {e.title}
                   </h5>
                   <h6>
                     {e.brand}-{e.category}
@@ -32,11 +31,12 @@ function Productslist({data}) {
                   <p>DiscountPercentage:{e.discountPercentage}%</p>
                   <p>Stocks:{e.stock}</p>
                   <button
-                    onClick={() => navigate("/Productslist/"+e.id)}
+                    onClick={() => navigate("/Productslist/"+index)}
                     className="btn btn-primary"
                   >
                     Buy Now
                   </button>
+                  
                   
                 </div>
               </div>

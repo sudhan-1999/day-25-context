@@ -10,21 +10,35 @@ function Details({ data }) {
   function minus() {
     setCount(count - 1);
   }
-  console.log(data);
   const { id } = useParams();
+  const product = data[id];
+
+  if (!product) {
+    return (
+      <div
+        style={{
+          "margin-left": "400px",
+          "margin-top": "200px",
+          fontSize: "50px",
+          "font-weight": "bold",
+        }}
+      >
+        Product not found!.....
+      </div>
+    );
+  }
+
   return (
     <div className="detailedpage">
       <div className="row">
         <div className="col-lg-6">
           <span className="span1">
-            <img src={data.title} alt="mobiles.." />
+            <img src={data[id].images} alt="mobiles.." />
           </span>
         </div>
         <div className="col-lg-6">
-          <h3 className="span2">
-            {data.title}-{id}title
-          </h3>
-          <p>{data.description}description</p>
+          <h3 className="span2">{data[id].title}</h3>
+          <p>{data[id].description}</p>
         </div>
       </div>
 
@@ -35,17 +49,17 @@ function Details({ data }) {
             <span className="span4">{count}</span>
             <button onClick={plus}>+</button>
           </div>
-          <div className="span5">${count * data.price}</div>
+          <div className="span5">${count * data[id].price}</div>
         </div>
         <div className="col-lg-6">
           <div>
-            <p>Subtotal:${count * data.price}</p>
+            <p>Subtotal:${count * data[id].price}</p>
             <p>Shipping:Free</p>
           </div>
         </div>
       </div>
       <div>
-        <h4>Total:${count * data.price}</h4>
+        <h4>Total:${count * data[id].price}</h4>
       </div>
     </div>
   );
