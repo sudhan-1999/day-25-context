@@ -33,12 +33,12 @@ function Details({ data }) {
       <div className="row">
         <div className="col-lg-6">
           <span className="span1">
-            <img src={data[id].images} alt="mobiles.." />
+            <img src={product.images} alt="mobiles.." />
           </span>
         </div>
         <div className="col-lg-6">
-          <h3 className="span2">{data[id].title}</h3>
-          <p>{data[id].description}</p>
+          <h3 className="span2">{product.title}</h3>
+          <p>{product.description}</p>
         </div>
       </div>
 
@@ -49,17 +49,17 @@ function Details({ data }) {
             <span className="span4">{count}</span>
             <button onClick={plus}>+</button>
           </div>
-          <div className="span5">${count * data[id].price}</div>
+          <div className="span5">${count * product.price}</div>
         </div>
         <div className="col-lg-6">
           <div>
-            <p>Subtotal:${count * data[id].price}</p>
+            <p>Subtotal:${count * product.price}</p>
             <p>Shipping:Free</p>
           </div>
         </div>
       </div>
       <div>
-        <h4>Total:${count * data[id].price}</h4>
+        <h4>Total:${count * product.price}</h4>
       </div>
     </div>
   );
