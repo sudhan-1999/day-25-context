@@ -1,7 +1,7 @@
 import React from "react";
 import Productslist from "./products";
 import Details from "./Detailed";
-import { Routes, Route,Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const data = [
@@ -97,10 +97,9 @@ function App() {
   ];
   return (
     <div>
-      <Link to="/Productslist" element={<Productslist/>}>Product</Link>
       <Routes>
-        <Route path="Productslist" element={<Productslist data={data}  />} />
-        <Route path="/Productslist/:id" element={<Details data={data} />} />
+        <Route path="/" element={<Productslist data={data}  />} />
+        <Route path="Productslist/:id" element={<Details data={data} />} />
       </Routes>
       
     </div>

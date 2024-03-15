@@ -15,7 +15,7 @@ function Productslist({data}) {
                 <img
                   style={{ width: "10rem", height: "15rem" }}
                   className="card-img-top"
-                  src={e.images[0]}
+                  src={e.thumbnail}
                   alt="Product image"
                 />
                 <div className="card-body">

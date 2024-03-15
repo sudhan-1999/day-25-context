@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+//import {ProductContext} from './productcontextprovider';
 
 function Details({ data }) {
+  //const{count,plus,minus}=useContext(ProductContext)
   const [count, setCount] = useState(1);
   function plus() {
     setCount(count + 1);
@@ -29,32 +31,33 @@ function Details({ data }) {
   }
 
   return (
+    
     <div className="detailedpage">
       <div className="row">
         <div className="col-lg-6">
           <span className="span1">
-            <img src={product.images} alt="mobiles.." />
+            <img src={product.images[0]} alt="mobiles.." />
           </span>
         </div>
         <div className="col-lg-6">
           <h3 className="span2">{product.title}</h3>
-          <p>{product.description}</p>
+          <p className="des">{product.description}</p>
         </div>
       </div>
 
       <div className="row">
         <div className="col-lg-6">
           <div className="span3">
-            <button onClick={minus}>-</button>
+            <button className="bt"onClick={minus}>-</button>
             <span className="span4">{count}</span>
-            <button onClick={plus}>+</button>
+            <button className="bt" onClick={plus}>+</button>
           </div>
           <div className="span5">${count * product.price}</div>
         </div>
         <div className="col-lg-6">
           <div>
-            <p>Subtotal:${count * product.price}</p>
-            <p>Shipping:Free</p>
+            <p className="p1">Subtotal:${count * product.price}</p>
+            <p className="p2">Shipping:Free</p>
           </div>
         </div>
       </div>
@@ -62,7 +65,7 @@ function Details({ data }) {
         <h4>Total:${count * product.price}</h4>
       </div>
     </div>
-  );
+    );
 }
 
 export default Details;

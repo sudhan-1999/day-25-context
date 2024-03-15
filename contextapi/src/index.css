@@ -10,7 +10,24 @@
 button {
   background-color: rgb(189, 254, 176);
   border-style: none;
+ 
 }
 .span3{
   margin-bottom: 10px;
+}
+.span4{
+  padding: 0 10px;
+  font-size: 20px
+}
+.p1,.p2{
+  font-size: 20px
+}
+.span5{
+  font-size: 20px;
+  font-weight: bold;
+}
+.bt{
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
 }
